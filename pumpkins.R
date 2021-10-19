@@ -27,8 +27,6 @@ first_place %>%
 with_year <- first_place %>%
   mutate(year = as.numeric(substr(id, 1, 4)))
 
-RColorBrewer::
-
 with_year %>%
   ggplot(aes(x = year, y = weight_lbs, color = country)) +
   geom_point(size = 4) +
