@@ -1,5 +1,6 @@
 library(tidytuesdayR)
 library(tidyverse)
+library(lubridate)
 
 tt_available()
 last_tuesday()
@@ -21,3 +22,10 @@ first_place <- first_place %>%
 first_place %>%
   ggplot(aes(x = country, y = weight_lbs)) +
   geom_jitter()
+
+with_year <- first_place %>%
+  mutate(year = as.numeric(substr(id, 1, 4)))
+
+with_year %>%
+  ggplot(aes(x = year, y = weight_lbs, color = country)) +
+  geom_point()
