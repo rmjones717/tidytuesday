@@ -11,10 +11,7 @@ library(lubridate)
 library(RColorBrewer)
 
 #+ load-packages, echo=FALSE
-tt_available()
-last_tuesday()
-tt_load(last_tuesday())
-tuesdata <- tt_load(last_tuesday())
+tuesdata <- tt_load("2021-10-19")
 
 #+ glimpse
 pumpkins <- tuesdata$pumpkins
