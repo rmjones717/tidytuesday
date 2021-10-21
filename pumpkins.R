@@ -1,8 +1,16 @@
+#' ---
+#' title: "First TidyTuesday for MJ"
+#' author: "Mark Jones"
+#' date: "October 21, 2021"
+#' output: github_document
+#' ---
+
 library(tidytuesdayR)
 library(tidyverse)
 library(lubridate)
 library(RColorBrewer)
 
+#+ include = FALSE
 tt_available()
 last_tuesday()
 tt_load(last_tuesday())
