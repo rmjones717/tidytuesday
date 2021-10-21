@@ -10,7 +10,7 @@ library(tidyverse)
 library(lubridate)
 library(RColorBrewer)
 
-#+ load-packages, echo=FALSE
+#+ load-packages, include=FALSE
 tuesdata <- tt_load("2021-10-19")
 
 #+ glimpse
