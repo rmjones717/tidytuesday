@@ -10,7 +10,7 @@ library(tidyverse)
 library(lubridate)
 library(RColorBrewer)
 
-#+ include = FALSE
+#+ load-data, include = FALSE, echo = FALSE
 tt_available()
 last_tuesday()
 tt_load(last_tuesday())
