@@ -10,17 +10,20 @@ library(tidyverse)
 library(lubridate)
 library(RColorBrewer)
 
-#+ load-data, include = FALSE, echo = FALSE
+#+ load-packages, echo=FALSE
 tt_available()
 last_tuesday()
 tt_load(last_tuesday())
-
 tuesdata <- tt_load(last_tuesday())
 
+#+ glimpse
 pumpkins <- tuesdata$pumpkins
 
 glimpse(pumpkins)
 
+#' Filtering out first place pumpkins
+#' 
+#+ filter-first
 first_place <- pumpkins %>%
   group_by(state_prov) %>%
   filter(place == 1)
@@ -28,10 +31,14 @@ first_place <- pumpkins %>%
 first_place <- first_place %>%
   mutate(weight_lbs = as.numeric(gsub(",", "", weight_lbs)))
 
+#' Take a look
+#+ plot-first
 first_place %>%
   ggplot(aes(x = country, y = weight_lbs)) +
   geom_jitter()
 
+#' Add in year and make it look nice
+#+ plot-year
 with_year <- first_place %>%
   mutate(year = as.numeric(substr(id, 1, 4)))
 
